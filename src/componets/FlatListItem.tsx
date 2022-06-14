@@ -3,10 +3,10 @@ import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MenuItemProps } from '../interfaces/appInterfaces';
 
-const FlatListItem = ({ title, icon, component }: MenuItemProps) => {
+const FlatListItem = ({ title, icon, screenName }: MenuItemProps) => {
   const navigation = useNavigation()
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={()=> navigation.navigate(component as any)}>
+    <TouchableOpacity activeOpacity={0.8} onPress={()=> navigation.navigate(screenName as any)}>
       <View style={style.item}>
         <Ionicons name={icon} size={18} color='black' />
         <Text style={style.text}>{title}</Text>

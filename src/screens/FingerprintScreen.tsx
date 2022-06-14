@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { useLocalAuthentication } from '../hooks/useLocalAuthentication';
 
-const Fingerprint = () => {
+const FingerprintScreen = () => {
   const {
     authData,
     authLevel,
@@ -38,4 +38,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default Fingerprint;
+export default FingerprintScreen;

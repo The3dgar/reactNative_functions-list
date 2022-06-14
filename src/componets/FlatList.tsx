@@ -6,26 +6,20 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import menuItems from '../config/menuItems';
 import { MenuItemProps } from '../interfaces/appInterfaces';
 import { GlobalTheme } from '../theme/Theme';
 import FlatListItem from './FlatListItem';
 
-const DATA: MenuItemProps[] = [
-  {
-    title: 'Fingerprint',
-    icon: 'finger-print',
-    component: 'Fingerprint',
-  },
-  {
-    title: 'Fingerprint2',
-    icon: 'finger-print',
-    component: 'FingerprintScreen',
-  },
-];
-
 const Flatlist = () => {
-  const renderItem = ({ item }: { item: MenuItemProps}) => {
-    return <FlatListItem title={item.title} icon={item.icon} component={item.component} />;
+  const renderItem = ({ item }: { item: MenuItemProps }) => {
+    return (
+      <FlatListItem
+        title={item.title}
+        icon={item.icon}
+        screenName={item.screenName}
+      />
+    );
   };
 
   const renderListHeader = () => {
@@ -39,7 +33,7 @@ const Flatlist = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={DATA}
+        data={menuItems}
         renderItem={renderItem}
         keyExtractor={(item) => item.title}
         ListHeaderComponent={renderListHeader}

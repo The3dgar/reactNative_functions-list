@@ -1,4 +1,15 @@
-# Enviroments vars:
+## About this repo
+    this repository is an interesting mobile features collections 
+
+#### Local authentication
+
+    - Dependencies:
+        yarn add expo-local-authentication
+    
+    - using in hook or other file:
+        import * as LocalAuthentication from 'expo-local-authentication';
+
+#### Enviroments vars:
 
     - Dependencies: 
         yarn add react-native-dotenv

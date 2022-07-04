@@ -1,5 +1,7 @@
-import EnviromentsVars from 'react-native-dotenv';
-const { API_URL, API_TOKEN } = EnviromentsVars
+import Constants from 'expo-constants';
+import { AppConfig } from '../../app.config';
+
+const { API_TOKEN, API_URL } = Constants.manifest?.extra as AppConfig;
 
 const appConfig = {
   apiUrl: API_URL,

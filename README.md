@@ -12,18 +12,7 @@
 #### Enviroments vars:
 
     - Dependencies: 
-        yarn add react-native-dotenv
-
-    - Dev dependencies:
-        yarn add -D @types/react-native-dotenv
-
-    - Babel config plugin:
-        [
-          'module:react-native-dotenv',
-          {
-            moduleName: 'react-native-dotenv',
-          },
-        ]
+        yarn add dotenv react-native-dotenv expo-constants
 
     - Create .env file in root project
         API_URL=https://api.example.org
@@ -31,8 +20,13 @@
 
     - Ignore .env file in .gitignore
 
-    - Create a file config.js that export vars 
-        import EnviromentsVars from 'react-native-dotenv';
-        const { API_URL, API_TOKEN } = EnviromentsVars;
+    - Create or update a file app.config.ts that export enviroments vars and the interface
+
+    - create a config.ts file that export all enviroments vars to other files
+        
+        import Constants from 'expo-constants';
+        import { AppConfig } from '../../app.config';
+        
+        const { API_TOKEN, API_URL } = Constants.manifest?.extra as AppConfig;
 
 
